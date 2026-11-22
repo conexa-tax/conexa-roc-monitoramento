@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "conexa-captura-roc",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.57.0"
+  }
+}
