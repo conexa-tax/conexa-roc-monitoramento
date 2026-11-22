@@ -1,0 +1,33 @@
+name: Capturas públicas ROC / CBS
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '12 */6 * * *'
+permissions:
+  contents: write
+jobs:
+  capturar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependências
+        run: npm install --prefix automacao-roc --no-audit --no-fund
+      - name: Instalar navegador
+        run: npx --prefix automacao-roc playwright install chromium --with-deps
+      - name: Capturar relatório público
+        run: npm --prefix automacao-roc run capture
+      - name: Publicar capturas para GitHub Pages
+        run: |
+          git config user.name 'conexa-roc-bot'
+          git config user.email 'conexa-roc-bot@users.noreply.github.com'
+          git add docs/capturas
+          if ! git diff --cached --quiet; then
+            git commit -m 'Atualiza capturas públicas ROC/CBS'
+            git push
+          else
+            echo 'Nenhuma alteração para publicar'
+          fi
