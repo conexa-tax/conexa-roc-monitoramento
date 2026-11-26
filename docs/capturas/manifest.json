@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "capturedAt": "2026-11-25T18:58:33.870Z",
+  "capturedAt": "2026-11-26T01:21:59.771Z",
   "sourceUpdatedAt": null,
   "source": "Painel público ROC/CBS, Receita Federal (Power BI)",
   "url": "https://app.powerbi.com/view?r=eyJrIjoiNzg5MDA4M2UtYWZiZC00Y2U5LTkzYjctNTc4MzBkYTU0ZDhkIiwidCI6IjZmNDlhYTQzLTgyMmEtNGMyMC05NjcwLWRiNzcwMGJmMWViMCJ9",
@@ -20,10 +20,6 @@
     {
       "filename": "roc-04.png",
       "label": "Página 4 do Power BI"
-    },
-    {
-      "filename": "roc-05.png",
-      "label": "Página 5 do Power BI"
     }
   ],
   "note": "Horário de captura da visualização, não horário da atualização da base de dados. Não há extração estruturada de indicadores."
